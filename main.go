@@ -40,6 +40,7 @@ func trim(s string)string{
 func main() {
 	r:=gin.Default()
 	r.LoadHTMLGlob("template/*.html")
+	r.Static("/views","./views")
 
 	r.GET("/",func(c *gin.Context){
 		c.Redirect(http.StatusFound,"/Pal")
