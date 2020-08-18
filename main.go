@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"unicode"
 
 	"github.com/gin-gonic/gin"
 )
@@ -26,7 +27,11 @@ func palindrome(str string)bool{
 }
 func trim(s string)string{
 	res:=strings.Trim(s,"!@#$%^&*()*?><.,;''/| ")
-	
+	for _,char:=range res{
+		if !unicode.IsLetter(char) && !unicode.IsDigit(char){
+			strings.ReplaceAll(res,string(char),"")
+		}
+	}
 	
 	return strings.ToLower(strings.ReplaceAll(res," ",""))
 }
