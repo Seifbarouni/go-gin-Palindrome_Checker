@@ -50,6 +50,10 @@ func main() {
 	})
 	r.POST("/Pal",func(c *gin.Context){
 		strToCheck:=c.PostForm("txt")
+		if strToCheck ==""{
+			c.Redirect(http.StatusFound,"/Pal")
+			return
+		}
 		valid:=palindrome(strToCheck)
 
 		if valid == true{
