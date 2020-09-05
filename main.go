@@ -47,6 +47,7 @@ func main() {
 	})
 	r.GET("/Pal",func(c *gin.Context ){
 		c.HTML(200,"index.html",str)
+		str = ""
 	})
 	r.POST("/Pal",func(c *gin.Context){
 		strToCheck:=c.PostForm("txt")
