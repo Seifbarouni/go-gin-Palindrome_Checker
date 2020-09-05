@@ -1,3 +1,3 @@
 # go-gin-Palindrome_Checker
 
-link for the app : https://intense-ocean-25394.herokuapp.com
+link for the app : https://fast-springs-77832.herokuapp.com/
